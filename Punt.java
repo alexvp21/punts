@@ -4,8 +4,16 @@ public class Punt {
 	private int[] coord = new int[2];
 
 	public Punt(int x, int y) {
-		coord[0] = x;
-		coord[1] = y;
+		try {
+			if (x >= 0 && y >= 0) {
+				coord[0] = x;
+				coord[1] = y;				
+			} else {
+				throw new IllegalArgumentException("Numeros negativos");
+			}
+		} catch (IllegalArgumentException e) {
+			System.err.println(e.getMessage());
+		}
 	}
 
 	public Punt() {
@@ -21,15 +29,39 @@ public class Punt {
 	}
 
 	public void setX(int x) {
-		coord[0] = x;
+		try {
+			if (x >= 0) {
+				coord[0] = x;				
+			} else {
+				throw new IllegalArgumentException("Numeros negativos");
+			}
+		} catch (IllegalArgumentException e) {
+			System.err.println(e.getMessage());
+		}
 	}
 
 	public void setY(int y) {
-		coord[1] = y;
+		try {
+			if (y >= 0) {
+				coord[1] = y;				
+			} else {
+				throw new IllegalArgumentException("Numeros negativos");
+			}
+		} catch (IllegalArgumentException e) {
+			System.err.println(e.getMessage());
+		}
 	}
 
 	public void suma(Punt p) {
-		coord[0] += p.getX();
-		coord[1] += p.getY();
+		try {
+			if (p.getX() >= 0 && p.getY() >= 0) {
+				coord[0] += p.getX();
+				coord[1] += p.getY();			
+			} else {
+				throw new IllegalArgumentException("Numeros negativos");
+			}
+		} catch (IllegalArgumentException e) {
+			System.err.println(e.getMessage());
+		}
 	}
 }
