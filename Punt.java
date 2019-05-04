@@ -7,7 +7,7 @@ public class Punt {
 		this.x = x;
 		this.y = y;
 	}
-	
+
 	public Punt() {
 		this(0, 0);
 	}
@@ -26,5 +26,10 @@ public class Punt {
 
 	public void setY(int y) {
 		this.y = y;
+	}
+
+	public void suma(Punt p) {
+		x += p.x;
+		y += p.y;
 	}
 }

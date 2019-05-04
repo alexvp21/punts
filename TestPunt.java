@@ -36,6 +36,15 @@ public class TestPunt {
 	    assertEquals(4, p.getY());
 	}
 	
+	@Test
+	public void testSuma() {
+		Punt p = new Punt(3, 4);
+		Punt pSuma = new Punt(10, 14);
+		p.suma(pSuma);
+	    assertEquals(13, p.getX());
+	    assertEquals(18, p.getY());
+	}
+	
 	
 	public static void main(String args[]) {
 		org.junit.runner.JUnitCore.main("TestPunt");
